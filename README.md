@@ -59,25 +59,6 @@ The project also includes **separated encoder and decoder models** for efficient
 
 ---
 
-## 🛠️ Requirements
-
-- Python 3.8+
-- TensorFlow 2.8+
-- NumPy
-- Pillow
-- Matplotlib
-
-You can create a `requirements.txt` like this if you want:
-
-```text
-tensorflow>=2.8
-numpy
-pillow
-matplotlib
-```
-
----
-
 ## 📈 Example Workflow
 
 - **Input** ➔ Load a `256x256` image
