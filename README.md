@@ -10,6 +10,8 @@ Two types of autoencoders are developed:
 
 The project also includes **separated encoder and decoder models** for efficient encoding and decoding processes.
 
+To clarify this roject is still in progress
+
 ---
 
 ## 📂 Project Structure
