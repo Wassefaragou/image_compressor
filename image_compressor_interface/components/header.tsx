@@ -45,10 +45,11 @@ export function Header() {
                 <span>About Us</span>
               </Link>
             </nav>
+
+            <div className="md:hidden">{/* Mobile menu button would go here if needed */}</div>
           </div>
         </div>
       </div>
     </header>
   )
 }
-

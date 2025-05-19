@@ -1,8 +1,8 @@
-import ImageUploader from "@/components/image-uploader"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Info, Brain, Lightbulb } from "lucide-react"
+import DualUploader from "@/components/dual-uploader"
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
 
       <main className="flex-1 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4 py-12">
-          
+          {/* Project titles */}
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-5xl font-bold text-blue-900 mb-4">Integrated Project</h1>
             <div className="h-1 w-24 bg-blue-600 mx-auto mb-6"></div>
@@ -21,7 +21,7 @@ export default function Home() {
             </p>
           </div>
 
-        
+          {/* Features section */}
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
             <Card className="bg-white border-blue-100 shadow-md hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
@@ -72,13 +72,13 @@ export default function Home() {
               <div className="flex items-start gap-6">
                 <Info className="w-10 h-10 text-blue-600 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-semibold text-blue-900 mb-3">About Image Reduction</h3>
+                  <h3 className="text-xl font-semibold text-blue-900 mb-3">About Image Reduction (Must read)</h3>
                   <p className="text-gray-700 leading-relaxed">
                     This tool uses an autoencoder neural network to perform dimensionality reduction on images. The
-                    autoencoder compresses the image into a lower-dimensional representation while preserving its
-                    essential features, then reconstructs it to demonstrate the effectiveness of the reduction process.
-                    This technique is valuable for data compression, feature extraction, and noise reduction in image
-                    processing.
+                    autoencoder compresses the image into a lower-dimensional representation (stored as an NPZ file)
+                    while preserving its essential features. You can upload an image to encode it or upload an NPZ file
+                    to reconstruct the original image. This technique is valuable for data compression, feature
+                    extraction, and noise reduction in image processing.
                   </p>
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function Home() {
 
           {/* Main content */}
           <div className="max-w-5xl mx-auto">
-            <ImageUploader />
+            <DualUploader />
           </div>
         </div>
       </main>
@@ -96,4 +96,3 @@ export default function Home() {
     </div>
   )
 }
-

@@ -60,6 +60,7 @@ export default function ImageUploader() {
                 <Upload className="w-16 h-16 mb-4 text-blue-600" />
                 <p className="mb-2 text-xl font-semibold text-blue-600">Click to upload an image</p>
                 <p className="text-sm text-gray-500 mb-4">PNG, JPG or GIF (MAX. 800x400px)</p>
+                <Button className="bg-blue-600 hover:bg-blue-700">Select Image</Button>
               </div>
               <input id="file-upload" type="file" className="hidden" onChange={handleFileChange} accept="image/*" />
             </label>
@@ -98,7 +99,7 @@ export default function ImageUploader() {
 
             <Card className="border-2 border-blue-100 shadow-lg overflow-hidden">
               <div className="bg-blue-900 text-white py-3 px-4">
-                <h3 className="text-lg font-semibold text-center">Reconstructor image</h3>
+                <h3 className="text-lg font-semibold text-center">Processed Image</h3>
               </div>
               <CardContent className="p-6">
                 <div className="relative w-full h-64 bg-gray-50 rounded-lg overflow-hidden">
@@ -117,7 +118,7 @@ export default function ImageUploader() {
             <Card className="border-blue-100 shadow-md p-4 bg-blue-50">
               <p className="text-sm text-gray-700 flex items-center gap-2">
                 <Info className="w-4 h-4 text-blue-600" />
-               
+                The processed image has been reduced in dimensionality while preserving essential features
               </p>
             </Card>
           </div>
@@ -126,4 +127,3 @@ export default function ImageUploader() {
     </div>
   )
 }
-

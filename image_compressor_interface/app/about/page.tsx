@@ -29,9 +29,7 @@ export default function About() {
                   <h2 className="text-3xl font-bold text-blue-900 mb-2">Wassef Aragou</h2>
                   <p className="text-blue-600 font-medium mb-4">Lead Researcher</p>
                   <p className="text-gray-700 mb-6 leading-relaxed">
-                    Wassef Aragou is a researcher at École Mohammadia d'Ingénieurs (EMI), focusing on machine learning
-                    and deep learning applications. His research interests include dimensionality reduction, neural
-                    networks, and computer vision.
+Wassef Aragou is an engineering student at École Mohammadia d'Ingénieurs (EMI), specializing in machine learning and deep learning. His interests include dimensionality reduction, neural networks, and computer vision.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex items-center gap-3">
@@ -132,4 +130,3 @@ export default function About() {
     </div>
   )
 }
-
