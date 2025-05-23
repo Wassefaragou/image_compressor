@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 decoder = load_model('./models/decoder_model.keras')
 
 # === Charger le fichier encodé compressé (.npz) ===
-data = np.load('./Image_compressed/encoded_image.npz')
+data = np.load('./npz_files/encoded_image.npz')
 encoded_image = data['encoded']
 
 # ⚠️ Convertir en float32 si encodé en float16

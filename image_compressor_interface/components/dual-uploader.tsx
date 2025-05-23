@@ -182,7 +182,7 @@ export default function DualUploader() {
 
                 <Card className="border-2 border-blue-100 shadow-lg overflow-hidden">
                   <div className="bg-blue-900 text-white py-3 px-4">
-                    <h3 className="text-lg font-semibold text-center">Processed Image</h3>
+                    <h3 className="text-lg font-semibold text-center">Reconstructed Image</h3>
                   </div>
                   <CardContent className="p-6">
                     <div className="relative w-full h-64 bg-gray-50 rounded-lg overflow-hidden">
@@ -226,6 +226,27 @@ export default function DualUploader() {
               <p className="text-gray-600 mt-2">Decoding from NPZ file</p>
             </div>
           )}
+
+          {reconstructedImage && (
+                <div className="flex justify-center mt-6">
+                  <Card className="border-blue-100 shadow-md p-6 bg-blue-50 w-full max-w-md">
+                    <div className="flex flex-col items-center gap-4">
+                      <Info className="w-8 h-8 text-blue-600" />
+                      <p className="text-center text-gray-700">
+                        Your file has been successfully decoded. The reconstructed image is now available for download.
+                      </p>
+                      <a
+                        href={reconstructedImage}
+                        download="reconstructed_image.png"
+                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors text-lg"
+                      >
+                        <Download className="w-5 h-5" />
+                        Download the image
+                      </a>
+                    </div>
+                  </Card>
+                </div>
+              )}
 
           {reconstructedImage && (
             <div className="space-y-6">

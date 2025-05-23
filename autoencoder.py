@@ -14,17 +14,17 @@ def load_images_from_folder(folder, target_size=(256, 256)):
             images.append(np.array(img_resized) / 255.0)
     return np.array(images)
 
-def build_light_autoencoder(input_shape):
+def autoencoder(input_shape):
     input_img = layers.Input(shape=input_shape)
 
-    # ENCODEUR allégé
+    # ENCODEUR 
     x = layers.Conv2D(32, (3,3), activation='relu', padding='same')(input_img)
     x = layers.MaxPooling2D((2,2), padding='same')(x)
     x = layers.Conv2D(64, (3,3), activation='relu', padding='same')(x)
     x = layers.MaxPooling2D((2,2), padding='same')(x)
     x = layers.Conv2D(32, (3,3), activation='relu', padding='same')(x)
     x = layers.MaxPooling2D((2,2), padding='same')(x)
-    encoded = layers.MaxPooling2D((2,2), padding='same', name='encoded_layer')(x)  # Ajout d'un 4e maxpool
+    encoded = layers.MaxPooling2D((2,2), padding='same', name='encoded_layer')(x)  
 
     # DÉCODEUR
     encoded_input = layers.Input(shape=encoded.shape[1:])
@@ -34,7 +34,7 @@ def build_light_autoencoder(input_shape):
     x = layers.UpSampling2D((2,2))(x)
     x = layers.Conv2DTranspose(32, (3,3), activation='relu', padding='same')(x)
     x = layers.UpSampling2D((2,2))(x)
-    x = layers.UpSampling2D((2,2))(x)  # Ajout pour annuler le 4e MaxPooling
+    x = layers.UpSampling2D((2,2))(x) 
     decoded_output = layers.Conv2D(3, (3,3), activation='sigmoid', padding='same')(x)
 
     encoder = models.Model(input_img, encoded, name="encoder")
@@ -49,7 +49,7 @@ image_folder = './training_images'
 fixed_size = (256, 256)
 images_array = load_images_from_folder(image_folder, target_size=fixed_size)
 
-autoencoder, encoder, decoder = build_light_autoencoder((*fixed_size, 3))
+autoencoder, encoder, decoder = autoencoder((*fixed_size, 3))
 autoencoder.summary()
 
 autoencoder.fit(images_array, images_array, epochs=200, batch_size=45, validation_split=0.3, shuffle=True)
@@ -59,4 +59,3 @@ os.makedirs('./models', exist_ok=True)
 encoder.save('./models/encoder_model.keras')
 decoder.save('./models/decoder_model.keras')
 autoencoder.save('./models/autoencoder_model.keras')
-

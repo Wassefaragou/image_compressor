@@ -15,7 +15,7 @@ def load_and_preprocess_image(image_path, target_size=(256, 256)):
     return np.expand_dims(img_array, axis=0)  # Ajouter la dimension batch
 
 # test
-image_path = 'training_images/Img_100.jpg'  
+image_path = ''  # Chemin de l'image à tester
 input_size = (256, 256)           
 
 # === Prétraitement ===
@@ -31,4 +31,4 @@ plt.show()
 encoded_img = encoder.predict(img).astype(np.float16)
 
 # === Sauvegarde compressée en .npz ===
-np.savez_compressed('./Image_compressed/encoded_image.npz', encoded=encoded_img)
+np.savez_compressed('./npz_files/encoded_image.npz', encoded=encoded_img)

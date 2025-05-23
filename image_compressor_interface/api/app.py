@@ -9,9 +9,9 @@ import tempfile
 from tensorflow.keras.models import load_model
 from flask import url_for
 
-# Load your models at import time
-encoder = load_model('C:/Users/arago/Documents/Study/Projects/image_compressor/image_compressor_interface/api/encoder_model.keras')
-decoder = load_model('C:/Users/arago/Documents/Study/Projects/image_compressor/image_compressor_interface/api/decoder_model.keras')
+# Load your models
+encoder = load_model('./api/encoder_model.keras')
+decoder = load_model('./api/decoder_model.keras')
 
 app = Flask(__name__)
 CORS(app)
