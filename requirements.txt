@@ -1,0 +1,11 @@
+flask
+os
+base64
+requests
+json
+PIL
+tensorflow
+numpy
+matplotlib
+tempfile
+io
